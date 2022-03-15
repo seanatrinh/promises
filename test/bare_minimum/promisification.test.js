@@ -88,6 +88,7 @@ describe('Promisification', function() {
     it('should make a funny file available in the `then` block', function(done) {
       readFileAndMakeItFunnyAsync(__dirname + '/../files/file_to_read.txt')
         .then(function(funnyFile) {
+          console.log('funny file from .test ----', funnyFile);
           funnyFile.split('\n').forEach(function(line) {
             expect(line).to.contain('lol');
           });
